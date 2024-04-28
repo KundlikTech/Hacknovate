@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Searchkaro</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" type="text/css" href="/static/style.css">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="icon" href="/static/logo.png" type="image/icon type">
+</head>
+
+<body style="background-color: #b1c7ff;" class="bg-#b1c7ff text-white flex justify-center items-center h-screen">
+    <div class="container">
+        <!-- <h1 style="font-size: 5rem;color:black">Searchkaro</h1> -->
+        <img src="/static/searchkaro.png" alt="Searchkaro Logo" id="searchkaro">
+        <form action="/process" method="post">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search Products.............." value="{{result}}" name="original_text" >
+                <button class="search-btn box" type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </form>
+        <div class="button-group">
+            <form id="amazonSearchForm" action="https://www.amazon.in/s" method="get">
+                <input class="form-control" type="text" name="k" value="{{ result }}" readonly style="display: none;">
+                <div class="card">
+                    <button class="btn search box" type="submit"><img src="/static/amazon.jpg" alt="Amazon Logo" id="amazon-logo"></button>
+                </div>
+            </form>
+
+            <form id="flipkartSearchForm" action="https://www.flipkart.com/search" method="get">
+                <input class="form-control" type="text" name="q" value="{{ result }}" readonly style="display: none;">
+                <div class="card">
+                    <button class="btn search box" type="submit"><img src="/static/flipkart.jpg" alt="Flipkart Logo" id="flipkart-logo"></button>
+                </div>
+            </form>
+
+            <form id="snapdealSearchForm" action="https://www.snapdeal.com/search" method="get">
+                <input class="form-control" type="text" name="keyword" value="{{ result }}" readonly style="display: none;">
+                <div class="card">
+                    <button class="btn search box" type="submit"><img src="/static/snapdeal.jpg" alt="Snapdeal Logo" id="snapdeal-logo"></button>
+                </div>
+            </form>
+
+            <form id="myntraSearchForm" action="https://www.myntra.com/{{result}}" method="get">
+                <input class="form-control" type="text" name="rawQuery" value="{{ result }}" readonly style="display: none;">
+                <div class="card">
+                    <button class="btn search box" type="submit"><img src="/static/Myntra.png" alt="Myntra Logo" id="myntra-logo"></button>
+                </div>
+            </form>
+
+            <form id="meeshoSearchForm" action="https://www.meesho.com/search" method="get">
+                <input class="form-control" type="text" name="q" value="{{ result }}" readonly style="display: none;">
+                <div class="card">
+                    <button class="btn search box" type="submit"><img src="/static/meesho.png" alt="Meesho Logo" id="meesho-logo"></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="all-buttons ">
+        <button class="btn btn-primary button" id="openTabs">Open All Websites</button>
+        
+    </div>
+    
+    <script>
+        document.getElementById("openTabs").addEventListener("click", function() {
+            var resultValue = document.querySelector(".search-input").value.trim();
+
+            document.querySelector("#amazonSearchForm input[name='k']").value = resultValue;
+            document.querySelector("#flipkartSearchForm input[name='q']").value = resultValue;
+            document.querySelector("#snapdealSearchForm input[name='keyword']").value = resultValue;
+            document.querySelector("#myntraSearchForm input[name='rawQuery']").value = resultValue;
+            document.querySelector("#meeshoSearchForm input[name='q']").value = resultValue;
+            
+            window.open("https://www.amazon.in/s?k=" + encodeURIComponent(resultValue), "_blank");
+            window.open("https://www.flipkart.com/search?q=" + encodeURIComponent(resultValue), "_blank");
+            window.open("https://www.snapdeal.com/search?keyword=" + encodeURIComponent(resultValue), "_blank");
+            window.open("https://www.myntra.com/{{result}}?rawQuery" + encodeURIComponent(resultValue), "_blank");
+            window.open("https://www.meesho.com/search?q=" + encodeURIComponent(resultValue), "_blank");
+        });
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
