@@ -1,0 +1,133 @@
+ body {
+    background-color: rgba(232, 234, 237, 1.00);
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Use min-height instead of height for responsiveness */
+    margin: 0; /* Remove default margin */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 90%; /* Limit container width */
+    padding: 0 20px; /* Add some padding to the sides */
+}
+
+
+.search-input {
+    border: 2px solid #fff;
+    border-radius: 25px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    background-color: transparent;
+    color: #fff;
+    outline: none;
+    max-width: 100%; /* Make input width responsive */
+}
+
+/* Adjustments for buttons */
+.btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+#myntra-logo {
+    width: 122px;
+    height: 122px;
+    border-radius: 50%; /* Adjust border-radius to make it circular */
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap; /* Ensure buttons wrap to the next line on smaller screens */
+    justify-content: center; /* Center align buttons */
+    margin-top: 20px;
+}
+
+.card {
+    margin: 10px;
+    width: 150px; /* Reduce card size for smaller screens */
+    height: 150px; /* Reduce card size for smaller screens */
+    border: none;
+    border-radius: 50%; /* Make cards circular */
+    background-color: #54545D;
+    box-shadow: 4px 8px 16px #8b795e;
+}
+
+.card img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+}
+
+
+.all-buttons {
+    margin-top: 20px;
+}
+
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center; 
+    margin: 0 auto; 
+}
+
+
+.search-input {
+    flex: 1;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    padding: 10px 40px 10px 20px;
+    margin-right: -20px;
+}
+
+.search-btn {
+    position: absolute; /* Set position to absolute */
+    top: 25px; /* Align to the vertical center */
+    right: 10px; /* Align to the right edge */
+    transform: translateY(-50%); 
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+
+/* Adjustments for open all button */
+#openTabs {
+    margin-top: 20px;
+    font-size: 1.5rem; /* Reduce font size for smaller screens */
+}
+#searchkaro{
+    width: 50vh;
+    margin-bottom: 25px;
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .search-container {
+        width: 500px; /* Set the width of the search input to 100px */
+    }
+}
+@media screen and (min-width: 405px) and (max-width: 575px) {
+    .search-container {
+        width: 320px; /* Set the width of the search input to 100px */
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+    .search-container {
+        width: 650px; /* Set the width of the search input to 100px */
+    }
+}
+@media screen and (min-width: 992px)  {
+    .search-container {
+        width: 850px; /* Set the width of the search input to 100px */
+    }
+}
